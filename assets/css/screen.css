@@ -201,12 +201,12 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
-    transition: color ease 0.3s;
+    color: #5ba4e5;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #111;
+    text-decoration: underline;
 }
 
 p, ul, ol, dl {
@@ -431,4 +431,39 @@ margin on the iframe, cause it breaks stuff. */
 
 .post-date {
     text-transform: uppercase;
+}
+
+/* Main content wrapper under cover image. Meta and
+content on the left + ads on the right on the right. */
+.content-body {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.content-sidebar { flex: 0 0 300px; }
+
+/* Post wrapper inside the content wrapper, the left side
+of the parent flexbox. Mete on the left, content on the right. */
+.post-body {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.post-meta { flex: 0 0 200px; }
+.post-content { flex: 1; }
+
+/* Bump the post meta in */
+@media (max-width: 1060px) {
+    .post-body { flex-direction: column; }
+}
+
+/* Hide the ads, bump the post meta out */
+@media (max-width: 900px) {
+    .post-body { flex-direction: row; }
+    .content-body { flex-direction: column; }
+}
+
+/* Bump the post meta in again */
+@media (max-width: 740px) {
+    .post-body { flex-direction: column; }
 }

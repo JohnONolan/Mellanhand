@@ -17,12 +17,45 @@
                 {{#if image}}<img class="post-image" src="{{image}}" alt="{{title}}" />{{/if}}
             </header>
 
-            <section class="post-content">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                {{content}}
-            </section>
+            <div class="content-body">
+
+                <div class="post-body">
+
+                    <section class="post-meta">
+                        {{! Everything inside the #author tags pulls data from the author }}
+                        {{#author}}
+
+                        <section class="author">
+                            {{#if image}}
+                            <figure class="author-image">
+                                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                            </figure>
+                            {{/if}}
+                            <h4><a href="{{url}}">{{name}}</a></h4>
+                            <div class="author-meta">
+                                {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                                {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                            </div>
+                        </section>
+
+                        {{/author}}
+                    </section>
+
+                    <section class="post-content">
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                        {{content}}
+                    </section>
+
+                </div>
+
+                <aside class="content-sidebar">
+                    side
+                </aside>
+
+            </div>
 
         </article>
+
     </div>
     {{/post}}
 
