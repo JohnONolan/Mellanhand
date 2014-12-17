@@ -23,7 +23,9 @@
 <body class="{{body_class}}">
 
     {{! Everything else gets inserted here }}
+    <main class="content" role="main">
     {{{body}}}
+    </main>
 
     <footer class="site-footer clearfix">
          <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
