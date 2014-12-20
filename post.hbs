@@ -5,13 +5,26 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-<div class="content-wrapper">
-    <article class="{{post_class}}">
+
+<article class="{{post_class}}">
+
+    {{! If post is featured and has an image, make a bit hero banner }}
+    {{#if image}}{{#if featured}}
+    <div class="hero">
+        <div class="hero-image  parallax" style="background-image: url({{image}});"></div>
+    </div>
+    {{/if}}{{/if}}
+
+    <div class="content-wrapper">
 
         <header class="post-header">
             <div class="post-tags">{{tags}}</div>
             <h1 class="post-title">{{title}}</h1>
-            {{#if image}}<img class="post-image" src="{{image}}" alt="{{title}}" />{{/if}}
+
+            {{! Regular post image, unless post is featured }}
+            {{#if image}}{{#unless featured}}
+            <img class="post-image" src="{{image}}" alt="{{title}}" />
+            {{/unless}}{{/if}}
         </header>
 
         <div class="content-body">
@@ -51,7 +64,9 @@
 
         </div>
 
-    </article>
+    </div>
 
-</div>
+</article>
+
+
 {{/post}}
