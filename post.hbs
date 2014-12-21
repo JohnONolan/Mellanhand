@@ -22,12 +22,12 @@
             <header class="post-header">
                 <div class="post-tags">{{tags}}</div>
                 <h1 class="post-title">{{title}}</h1>
-
-                {{! Regular post image, unless post is featured }}
-                {{#if image}}{{#unless featured}}
-                <figure class="post-image"><img src="{{image}}" alt="{{title}}" /></figure>
-                {{/unless}}{{/if}}
             </header>
+
+            {{! Regular post image, unless post is featured }}
+            {{#if image}}{{#unless featured}}
+            <figure class="post-image"><img src="{{image}}" alt="{{title}}" /></figure>
+            {{/unless}}{{/if}}
 
             {{! Author/sharing links - left on desktop, top on mobile }}
             <section class="post-meta">
@@ -35,15 +35,9 @@
                 {{#author}} {{! Pull data from the author object }}
                 <section class="author">
                     {{#if image}}
-                    <figure class="author-image">
-                        <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-                    </figure>
+                    <a class="author-image" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
                     {{/if}}
-                    <h4><a href="{{url}}">{{name}}</a></h4>
-                    <div class="author-meta">
-                        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                    </div>
+                    <span class="author-name"><a href="{{url}}">{{name}}</a></span>
                 </section>
                 {{/author}}
 
@@ -54,14 +48,38 @@
             </section>{{!post-meta}}
 
             <section class="post-content">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY \at HH:MM"}}</time>
                 {{content}}
             </section>
 
         </div>{{!post-body}}
 
         <aside class="post-sidebar">
-            side
+            <section class="popular-posts">
+                <h4>Popular Now</h4>
+                <ol>
+                    <li><a href="#">
+                        <div class="post-title">The First and Only Way to Wrestle a Grizzle Bear</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">These 20 People Have More Money Than Sense</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">One Little Girl Dances to Dupstep and The Crowd Goes Wild</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">72 Reasons why Cats are Probably Terrorists, Backed by Science</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">Charlie was a Boy with Nothing, Now he Has Everythign</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                </ol>
+            </section>
         </aside>
 
     </div>{{!post-wrapper}}
