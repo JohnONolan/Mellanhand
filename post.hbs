@@ -1,72 +1,71 @@
 {{!< default}}
-
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{! Everything inside the #post tags pulls data from the post }}
-{{#post}}
+{{#post}} {{! Pull data from the post object }}
 
 <article class="{{post_class}}">
 
-    {{! If post is featured and has an image, make a bit hero banner }}
+    {{! If post is featured and has an image, make a big hero banner }}
     {{#if image}}{{#if featured}}
     <div class="hero">
         <div class="hero-image  parallax" style="background-image: url({{image}});"></div>
     </div>
     {{/if}}{{/if}}
 
-    <div class="content-wrapper">
+    {{! Outer wrapper for content/sidebar }}
+    <div class="post-wrapper">
 
-        <header class="post-header">
-            <div class="post-tags">{{tags}}</div>
-            <h1 class="post-title">{{title}}</h1>
+        {{! Inner wrapper for post-meta/content }}
+        <div class="post-body">
 
-            {{! Regular post image, unless post is featured }}
-            {{#if image}}{{#unless featured}}
-            <img class="post-image" src="{{image}}" alt="{{title}}" />
-            {{/unless}}{{/if}}
-        </header>
+            <header class="post-header">
+                <div class="post-tags">{{tags}}</div>
+                <h1 class="post-title">{{title}}</h1>
 
-        <div class="content-body">
+                {{! Regular post image, unless post is featured }}
+                {{#if image}}{{#unless featured}}
+                <figure class="post-image"><img src="{{image}}" alt="{{title}}" /></figure>
+                {{/unless}}{{/if}}
+            </header>
 
-            <div class="post-body">
+            {{! Author/sharing links - left on desktop, top on mobile }}
+            <section class="post-meta">
 
-                <section class="post-meta">
-                    {{! Everything inside the #author tags pulls data from the author }}
-                    {{#author}}
+                {{#author}} {{! Pull data from the author object }}
+                <section class="author">
+                    {{#if image}}
+                    <figure class="author-image">
+                        <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                    </figure>
+                    {{/if}}
+                    <h4><a href="{{url}}">{{name}}</a></h4>
+                    <div class="author-meta">
+                        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                    </div>
+                </section>
+                {{/author}}
 
-                    <section class="author">
-                        {{#if image}}
-                        <figure class="author-image">
-                            <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-                        </figure>
-                        {{/if}}
-                        <h4><a href="{{url}}">{{name}}</a></h4>
-                        <div class="author-meta">
-                            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                        </div>
-                    </section>
-
-                    {{/author}}
+                <section class="post-sharing">
+                    {{!share buttons}}
                 </section>
 
-                <section class="post-content">
-                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                    {{content}}
-                </section>
+            </section>{{!post-meta}}
 
-            </div>
+            <section class="post-content">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                {{content}}
+            </section>
 
-            <aside class="content-sidebar">
-                side
-            </aside>
+        </div>{{!post-body}}
 
-        </div>
+        <aside class="post-sidebar">
+            side
+        </aside>
 
-    </div>
+    </div>{{!post-wrapper}}
 
 </article>
-
 
 {{/post}}
