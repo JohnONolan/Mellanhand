@@ -20,12 +20,12 @@
         <div class="post-body">
 
             <header class="post-header">
-                {{#if tags}}
                 <div class="post-tags">
+                    {{! If post is featured, add feature label }}
                     {{#if featured}}<span class="feature-label">Feature</span>{{/if}}
+                    {{! Now list all the tags }}
                     {{tags}}
                 </div>
-                {{/if}}
                 <h1 class="post-title">{{title}}</h1>
             </header>
 
