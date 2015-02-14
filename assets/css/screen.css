@@ -461,6 +461,7 @@ on the left + sidebar on the right. */
 
 /* Bump the post meta in, move meta above image */
 @media (max-width: 1150px) {
+    .post-wrapper { padding: 5% 0 5% 5%; }
     .post-body { flex-direction: column; }
     .post-meta { order: 1; flex: 0 0 auto; }
     .post-image { order: 2; }
@@ -468,7 +469,7 @@ on the left + sidebar on the right. */
 
 /* Hide the sidebar */
 @media (max-width: 900px) {
-    .post-wrapper { flex-direction: column; }
+    .post-wrapper { padding: 5%; flex-direction: column; }
     .post-sidebar { display: none; }
 }
 
@@ -555,12 +556,7 @@ body:not(.feature-touch) .hero-image {
 }
 
 .post-image {
-    margin: 1.8em 0 1.8em -9%;
-}
-@media (max-width: 900px) {
-    .post-image {
-        margin: 1.8em -9%;
-    }
+    margin: 1.8em 0;
 }
 
 .author-image {
@@ -601,6 +597,17 @@ Post content
 .post-content h5,
 .post-content h6 {
     margin-top: 2.7em;
+}
+
+.feature-label {
+    padding: 2px 5px;
+    margin-right: 5px;
+    vertical-align: top;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    background: #5ba4e5;
 }
 
 .post-tags {
