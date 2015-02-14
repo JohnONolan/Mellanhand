@@ -447,9 +447,12 @@ on the left + sidebar on the right. */
 /* Inner wrapper. Meta on the left, content on the right. */
 .post-body {
     display: flex;
-    flex-flow: row wrap;
     flex: 1;
+    flex-flow: row wrap;
+    align-content: flex-start;
 }
+
+.post-header { flex: 1 100%; }
 
 /* Set the default order */
 .post-image { order: 1; flex: 1 100%; }
@@ -552,7 +555,12 @@ body:not(.feature-touch) .hero-image {
 }
 
 .post-image {
-    margin: 1.8em 0;
+    margin: 1.8em 0 1.8em -9%;
+}
+@media (max-width: 900px) {
+    .post-image {
+        margin: 1.8em -9%;
+    }
 }
 
 .author-image {
