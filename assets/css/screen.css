@@ -496,12 +496,16 @@ body:not(.feature-touch) .hero-image {
     margin: 0 auto;
     padding: 1% 0;
     border-bottom: #2e2e2e 10px solid;
+    font-family: "Open Sans", sans-serif;
 }
 
 /*fixed width cell on the left*/
 .site-logo {
     max-width: 300px;
+    font-weight: bold;
+    font-size: 4rem;
 }
+.site-logo a { color: #2e2e2e; }
 
 /*full width cell on the right*/
 .site-nav {
@@ -515,7 +519,6 @@ body:not(.feature-touch) .hero-image {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: "Open Sans", sans-serif;
 }
 
 /*cell size distributed evenly within parent*/
@@ -536,6 +539,7 @@ body:not(.feature-touch) .hero-image {
 .nav > li > a:hover,
 .nav > li > a:focus {
     text-decoration: none;
+    color: #5ba4e5;
 }
 
 
