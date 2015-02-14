@@ -19,16 +19,42 @@
         {{! Inner wrapper for post-meta/content }}
         <div class="post-body">
 
-            {{! Regular post image, unless post is featured }}
-            {{#if image}}{{#unless featured}}
-            <figure class="post-image"><img src="{{image}}" alt="{{title}}" /></figure>
-            {{/unless}}{{/if}}
-
             <section class="post-content">
+                {{#if image}}{{#unless featured}}
+                <figure class="post-image"><img src="{{image}}" alt="{{title}}" /></figure>
+                {{/unless}}{{/if}}
                 {{content}}
             </section>
 
         </div>{{!post-body}}
+
+        <aside class="post-sidebar">
+            <section class="popular-posts">
+                <h4>Popular Now</h4>
+                <ol>
+                    <li><a href="#">
+                        <div class="post-title">The First and Only Way to Wrestle a Grizzle Bear</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">These 20 People Have More Money Than Sense</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">One Little Girl Dances to Dupstep and The Crowd Goes Wild</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">72 Reasons why Cats are Probably Terrorists, Backed by Science</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="post-title">Charlie was a Boy with Nothing, Now he Has Everythign</div>
+                        <div class="author-name">by John O'Nolan</div>
+                    </a></li>
+                </ol>
+            </section>
+        </aside>
 
     </div>{{!post-wrapper}}
 

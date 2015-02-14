@@ -1,6 +1,6 @@
 /* ==========================================================================
-Table of Contents
-========================================================================== */
+   Table of Contents
+   ========================================================================== */
 
 /*
 
@@ -21,8 +21,8 @@ Table of Contents
 */
 
 /* ==========================================================================
-0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
-========================================================================== */
+   0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
+   ========================================================================== */
 
 article, aside, details,
 figcaption, figure,
@@ -96,8 +96,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 
 /* ==========================================================================
-1. Icons - Sets up the icon font and respective classes
-========================================================================== */
+   1. Icons - Sets up the icon font and respective classes
+   ========================================================================== */
 
 /* Import the font file with the icons in it */
 /*@font-face {
@@ -130,8 +130,8 @@ content of the :before pseudo element. Like a boss. */
 
 
 /* ==========================================================================
-2. General - Setting up some base styles
-========================================================================== */
+   2. General - Setting up some base styles
+   ========================================================================== */
 
 html {
     box-sizing: border-box;
@@ -429,7 +429,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-Layout
+   Layout
    ========================================================================== */
 
 /* Main  wrapper under cover image. Meta and content
@@ -463,6 +463,7 @@ on the left + sidebar on the right. */
 @media (max-width: 1150px) {
     .post-wrapper { padding: 5% 0 5% 5%; }
     .post-body { flex-direction: column; }
+    .post-header { flex: 0 0 auto; }
     .post-meta { order: 1; flex: 0 0 auto; }
     .post-image { order: 2; }
 }
@@ -474,19 +475,14 @@ on the left + sidebar on the right. */
 }
 
 /* Hero */
-
-.hero {
-    overflow: hidden;
-}
-
-body:not(.feature-touch) .hero-image {
-    height: 100vh;
-}
-
+.hero { overflow: hidden; }
 .hero-image {
+    height: 100vh;
     background: #eee no-repeat center center;
     background-size: cover;
 }
+@media (max-width: 900px) { .hero-image { height: 70vh; } }
+@media (max-width: 500px) { .hero-image { height: 50vh; } }
 
 
 /* ==========================================================================
@@ -589,8 +585,8 @@ body:not(.feature-touch) .hero-image {
 
 
 /* ==========================================================================
-Post content
-========================================================================== */
+   Post content
+   ========================================================================== */
 
 .post-content h2,
 .post-content h3,
@@ -608,7 +604,7 @@ Post content
     font-size: 1.3rem;
     font-weight: normal;
     text-transform: uppercase;
-    background: #5ba4e5;
+    background: #9fbb58;
 }
 
 .post-tags {
@@ -624,8 +620,8 @@ Post content
 
 
 /* ==========================================================================
-Sidebar
-========================================================================== */
+   Sidebar
+   ========================================================================== */
 
 .post-sidebar {
     margin-left: 3%;
