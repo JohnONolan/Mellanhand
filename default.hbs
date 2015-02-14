@@ -23,9 +23,15 @@
 </head>
 <body class="{{body_class}}">
 
+    <header class="site-header clearfix">
+        <nav class="site-nav">
+            {{navigation}}
+        </nav>
+    </header>
+
     {{! Everything else gets inserted here }}
     <main class="content" role="main">
-    {{{body}}}
+        {{{body}}}
     </main>
 
     <footer class="site-footer clearfix">
