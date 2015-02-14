@@ -20,7 +20,12 @@
         <div class="post-body">
 
             <header class="post-header">
-                {{#if tags}}<div class="post-tags">{{tags}}</div>{{/if}}
+                {{#if tags}}
+                <div class="post-tags">
+                    {{#if featured}}<span class="feature-label">Feature</span>{{/if}}
+                    {{tags}}
+                </div>
+                {{/if}}
                 <h1 class="post-title">{{title}}</h1>
             </header>
 
