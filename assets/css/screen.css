@@ -488,12 +488,27 @@ body:not(.feature-touch) .hero-image {
    Site Header
    ========================================================================== */
 
+/*flexbox wrapper*/
 .site-header {
+    display: flex;
+    align-items: flex-end;
     max-width: 1350px;
     margin: 0 auto;
+    padding: 1% 0;
     border-bottom: #2e2e2e 10px solid;
 }
 
+/*fixed width cell on the left*/
+.site-logo {
+    max-width: 300px;
+}
+
+/*full width cell on the right*/
+.site-nav {
+    flex: 1 1 100%;
+}
+
+/*nested flexbox wrapper*/
 .nav {
     display: flex;
     align-items: center;
@@ -503,6 +518,7 @@ body:not(.feature-touch) .hero-image {
     font-family: "Open Sans", sans-serif;
 }
 
+/*cell size distributed evenly within parent*/
 .nav > li {
     flex: 1 1 100%;
     margin: 0;
