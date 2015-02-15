@@ -55,5 +55,25 @@
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
+    {{#is "post"}} {{! Only output if viewng a post! JS for floating header }}
+    <script>
+    $(function() {
+        $(window).scroll(function() {
+            var header = $(".floating-header");
+            var title = $("h1.post-title");
+            var trigger = title.offset().top;
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= trigger + title.height() + 35 ) {
+                header.addClass("floating-active");
+            } else {
+                header.removeClass("floating-active");
+            }
+        });
+    });
+    </script>
+    {{/is}}
+
+
 </body>
 </html>
