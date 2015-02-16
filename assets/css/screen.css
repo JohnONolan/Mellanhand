@@ -262,7 +262,7 @@ hr {
 
 blockquote {
     position: relative;
-    margin: 3.5em -8rem;
+    margin: 3.5em -10%;
     padding: 0;
 }
 
@@ -727,6 +727,10 @@ on the left + sidebar on the right. */
    Post meta
    ========================================================================== */
 
+.post-meta a {
+    border-bottom: none;
+}
+
 .post-title {
     margin: 0 0 0.2em 0;
 }
@@ -740,6 +744,7 @@ on the left + sidebar on the right. */
     vertical-align: top;
     width: 35px;
     height: 35px;
+    border: none;
     margin-right: 5px;
     line-height: 0;
     border-radius: 100%;
@@ -754,13 +759,67 @@ on the left + sidebar on the right. */
     color: #aaa;
 }
 
-.post-meta {
-
+.author-name a {
+    border: none;
 }
 
-.post-meta .author-image {
-    margin: 0 auto;
+.post-sharing {
+    font-family: "Open Sans", sans-serif;
 }
+
+.post-sharing ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.post-sharing li {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.post-sharing a {
+    display: block;
+    color: #aaa;
+}
+
+.post-sharing a:hover {
+    color: #5ba4e5;
+}
+
+@media (min-width: 1151px) {
+    .post-meta {
+        padding: 0 20px;
+    }
+    .post-sharing:before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        height: 1px;
+        width: 10px;
+        margin: 0 auto;
+        background: rgba(0,0,0,0.6) 1px solid;
+    }
+    .post-meta .author-image {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .post-meta .author-name {
+        display: block;
+        font-size: 1.6rem;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        letter-spacing: -1px;
+        color: #2e2e2e;
+    }
+}
+
 
 
 /* ==========================================================================
@@ -795,6 +854,12 @@ on the left + sidebar on the right. */
     font-family: "Open Sans", sans-serif;
     font-size: 1.4rem;
     color: #aaa;
+}
+
+.post-content img {
+    margin-left: -10%;
+    margin-right: -10%;
+    max-width: 120%;
 }
 
 
