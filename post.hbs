@@ -17,8 +17,10 @@
     <div class="post-title">{{title}}</div>
     <div class="float-share">
         <div class="float-share-label">Share this</div>
-        <a class="float-share-tw" href="#">tw</a>
-        <a class="float-share-fb" href="#">fb</a>
+        <a class="float-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">tw</a>
+        <a class="float-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">fb</a>
     </div>
 </div>
 
@@ -57,28 +59,27 @@
 
                 {{#author}} {{! Pull data from the author object }}
                 <section class="author">
-                    {{#if image}}
-                    <a class="author-image" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-                    {{/if}}
-                    <span class="author-name"><a href="{{url}}">{{name}}</a></span>
+                    <a class="author-link" href="{{url}}">
+                        {{#if image}}
+                        <div class="author-image" style="background-image: url({{image}})"></div>
+                        {{/if}}
+                        <span class="author-name">{{name}}</span>
+                        <div class="author-bio">{{bio}}</div>
+                    </a>
                 </section>
                 {{/author}}
 
-                <section class="post-sharing">
-                    <ul class="">
-                        <li><a href="#">128</a></li>
-                        <li><a href="#">128</a></li>
-                        <li><a href="#">128</a></li>
-                        <li><a href="#">128</a></li>
-                        <li><a href="#">128</a></li>
-                    </ul>
-                </section>
+                {{> "share"}}
 
             </section>{{!post-meta}}
 
             <section class="post-content">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY \at HH:MM"}}</time>
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}} <span class="post-date-divider">at</span> {{date format="HH:MM"}}</time>
                 {{content}}
+
+                <footer class="post-footer">
+                    {{> "share"}}
+                </footer>
             </section>
 
         </div>{{!post-body}}

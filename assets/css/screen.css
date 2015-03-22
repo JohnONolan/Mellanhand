@@ -264,9 +264,10 @@ blockquote {
     position: relative;
     margin: 3.5em -10%;
     padding: 0;
+    color: #5ba4e5;
 }
 
-.blockquote:before {
+blockquote:before {
     display: block;
     content: '\201C';
     position: absolute;
@@ -276,7 +277,6 @@ blockquote {
 
 blockquote p {
     margin: 0.8em 0;
-    color: #5ba4e5;
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
     font-size: 3.8rem;
@@ -440,11 +440,13 @@ on the left + sidebar on the right. */
     display: flex;
     flex-direction: row;
     flex: 1;
-    max-width: 1350px;
-    padding: 5%;
     margin: 0 auto;
 }
-.post-sidebar { flex: 0 0 300px; }
+.post-sidebar {
+    flex: 0 0 350px;
+    padding-top: 3%;
+    border-left: #f0f0f0 1px solid;
+}
 
 /* Inner wrapper. Meta on the left, content on the right. */
 .post-body {
@@ -452,18 +454,22 @@ on the left + sidebar on the right. */
     flex: 1;
     flex-flow: row wrap;
     align-content: flex-start;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4%;
 }
 
-.post-header { flex: 1 100%; }
+.post-header {
+    flex: 1 100%;
+}
 
 /* Set the default order */
 .post-image { order: 1; flex: 1 100%; }
-.post-meta { order: 2; flex: 0 0 200px; }
+.post-meta { order: 2; flex: 0 0 160px; }
 .post-content { order: 3; flex: 1; }
 
 /* Bump the post meta in, move meta above image */
 @media (max-width: 1150px) {
-    .post-wrapper { padding: 5% 0 5% 5%; }
     .post-body { flex-direction: column; }
     .post-header { flex: 0 0 auto; }
     .post-meta { order: 1; flex: 0 0 auto; }
@@ -472,19 +478,19 @@ on the left + sidebar on the right. */
 
 /* Hide the sidebar */
 @media (max-width: 900px) {
-    .post-wrapper { padding: 5%; flex-direction: column; }
+    .post-wrapper { flex-direction: column; }
     .post-sidebar { display: none; }
 }
 
 /* Hero */
 .hero { overflow: hidden; }
 .hero-image {
-    height: 100vh;
+    height: 70vh;
     background: #eee no-repeat center center;
     background-size: cover;
 }
-@media (max-width: 900px) { .hero-image { height: 70vh; } }
-@media (max-width: 500px) { .hero-image { height: 50vh; } }
+@media (max-width: 900px) { .hero-image { height: 50vh; } }
+@media (max-width: 500px) { .hero-image { height: 40vh; } }
 
 
 /* ==========================================================================
@@ -495,10 +501,7 @@ on the left + sidebar on the right. */
 .site-header {
     display: flex;
     align-items: flex-end;
-    max-width: 1350px;
-    margin: 0 auto;
     padding: 1% 0;
-    border-bottom: #2e2e2e 10px solid;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -557,13 +560,13 @@ on the left + sidebar on the right. */
     align-items: center;
     position: fixed;
     height: 48px;
-    border-bottom: rgba(0,0,0,0.05) 1px solid;
+    border-bottom: rgba(0,0,0,0.06) 1px solid;
     z-index: 1000;
     top: 0;
     left: 0;
     right: 0;
     font-family: "Open Sans", sans-serif;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     -webkit-transform: translate3d(0, -120%, 0);
     -moz-transform: translate3d(0, -120%, 0);
     -ms-transform: translate3d(0, -120%, 0);
@@ -722,21 +725,12 @@ on the left + sidebar on the right. */
     .float-share-label { display: none; }
 }
 
-
 /* ==========================================================================
    Post meta
    ========================================================================== */
 
 .post-meta a {
     border-bottom: none;
-}
-
-.post-title {
-    margin: 0 0 0.2em 0;
-}
-
-.post-image {
-    margin: 1.8em 0;
 }
 
 .author-image {
@@ -763,60 +757,133 @@ on the left + sidebar on the right. */
     border: none;
 }
 
-.post-sharing {
+.post-meta .author-bio {
+    display: none;
+}
+
+.share {
     font-family: "Open Sans", sans-serif;
 }
 
-.post-sharing ul {
+.share ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.post-sharing li {
+.share li {
     margin: 0;
     font-size: 1.4rem;
 }
 
-.post-sharing a {
-    display: block;
-    color: #aaa;
+.share a {
+    display: inline-block;
+    float: left;
+    padding: 12px;
+    margin: 0 5px 0 0;
+    border: none;
+    color: #fff;
+    line-height: 1;
 }
 
-.post-sharing a:hover {
-    color: #5ba4e5;
+.share-facebook {
+    background: #3c5898;
+}
+
+.share-facebook:hover {
+    background: #324B82;
+}
+
+.share-twitter {
+    background: #33c6f4;
+}
+
+.share-twitter:hover {
+    background: #2BB2DD;
+}
+
+.share-mail {
+    background: #333;
+}
+
+.share-mail:hover {
+    background: #2a2a2a;
+}
+
+.share-pinterest {
+    background: #de010d;
+}
+
+.share-pinterest:hover {
+    background: #C71B0B;
+}
+
+.share-tumblr {
+    background: #34526f;
+}
+
+.share-tumblr:hover {
+    background: #2C4964;
+}
+
+.share-gplus {
+    background: #cd3627;
+}
+
+.share-gplus:hover {
+    background: #be1f14;
+}
+
+.share-whatsapp {
+    background: #4dc247;
+}
+
+.share-whatsapp:hover {
+    background: #44B03F;
 }
 
 @media (min-width: 1151px) {
     .post-meta {
-        padding: 0 20px;
-    }
-    .post-sharing:before {
-        display: block;
-        content: "";
-        position: absolute;
-        top: 1px;
-        left: 1px;
-        height: 1px;
-        width: 10px;
-        margin: 0 auto;
-        background: rgba(0,0,0,0.6) 1px solid;
+        margin-top: 30px;
+        padding: 8px 40px 0 0;
     }
     .post-meta .author-image {
         display: block;
         width: 100px;
         height: 100px;
-        margin: 0 auto;
+        margin: 0 auto 5px auto;
     }
     .post-meta .author-name {
         display: block;
+        padding: 0;
         font-size: 1.6rem;
+        line-height: 1.5em;
         text-align: center;
         font-family: "Open Sans", sans-serif;
         font-weight: bold;
         font-style: normal;
         letter-spacing: -1px;
         color: #2e2e2e;
+    }
+    .post-meta .author-bio {
+        display: block;
+        font-size: 1.1rem;
+        color: #777;
+        text-align: center;
+        line-height: 1;
+    }
+    .post-meta .author-link:hover .author-name {
+        color: #5ba4e5;
+    }
+
+    .post-meta .share {
+        margin-top: 30px;
+    }
+
+    .post-meta .share a {
+        display: block;
+        margin: 0 0 10px 0;
+        float: none;
     }
 }
 
@@ -825,6 +892,18 @@ on the left + sidebar on the right. */
 /* ==========================================================================
    Post content
    ========================================================================== */
+
+.post-content {
+    margin-top: 30px;
+}
+
+.post-title {
+   margin: 0 0 0.2em 0;
+}
+
+.post-image {
+   margin: 25px 0 0 0;
+}
 
 .post-content h2,
 .post-content h3,
@@ -850,26 +929,58 @@ on the left + sidebar on the right. */
     font-weight: bold;
 }
 
+.post-tags a {
+    border: none;
+    color: #5ba4e5;
+}
+
+.post-tags a:hover {
+    text-decoration: underline;
+}
+
 .post-date {
     font-family: "Open Sans", sans-serif;
     font-size: 1.4rem;
-    color: #aaa;
+    font-weight: bold;
+    color: #5ba4e5;
+    text-transform: uppercase;
 }
 
+.post-date-divider {
+    font-weight: 100;
+    text-transform: none;
+}
+
+/*
 .post-content img {
     margin-left: -10%;
     margin-right: -10%;
     max-width: 120%;
+}
+*/
+
+.post-content p:first-of-type {
+    font-size: 2.2rem;
+    color: #888;
+}
+
+.footnotes {
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.footnotes li {
+    margin: 0.6rem 0;
+}
+
+.footnotes p {
+    margin: 0;
 }
 
 
 /* ==========================================================================
    Sidebar
    ========================================================================== */
-
-.post-sidebar {
-    margin-left: 3%;
-}
 
 .post-sidebar a {
     border-bottom: none;

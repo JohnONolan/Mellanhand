@@ -1,0 +1,14 @@
+<section class="share">
+    <ul class="">
+        <li><a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">Share</a></li>
+        <li><a class="share-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">Tweet</a></li>
+        <li><a class="share-mail" href="mailto:?subject={{title}}&body=Hey, saw this on {{@blog.title}} and thought of you! - {{url absolute="true"}}">Send</a></li>
+        <li><a class="share-tumblr" href="https://www.tumblr.com/share?v=3&u={{url absolute="true"}}&t={{title}}" onclick="window.open(this.href, 'share-tumblr', 'width=450,height=483');return false;">Reblog</a></li>
+        <li><a class="share-pinterest" href="https://www.pinterest.com/pin/create/bookmarklet/?media={{image absolute="true"}}&url={{url absolute="true"}}&description={{title}}" onclick="window.open(this.href, 'share-pinterest', 'width=770,height=560');return false;">Pin</a></li>
+        <li><a class="share-gplus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+           onclick="window.open(this.href, 'share-gplus', 'width=490,height=530');return false;">Post</a></li>
+        <li><a class="share-whatsapp" href="whatsapp://send?text={{url absolute="true"}}">WhatsApp</a></li>
+    </ul>
+</section>
